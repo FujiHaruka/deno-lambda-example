@@ -3,8 +3,8 @@
  */
 
 // Event will be passed from command line arg
-const [eventJson] = Deno.args
-const event = JSON.parse(eventJson)
+const [eventJson] = Deno.args;
+const event = JSON.parse(eventJson);
 
 // Std out will be the response of the lambd function
 console.log("hello world");
