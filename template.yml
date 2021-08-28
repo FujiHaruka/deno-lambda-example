@@ -7,13 +7,13 @@ Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: hello-world/
-      Handler: handler.main
+      CodeUri: lambda/
+      Handler: handler
       Runtime: provided.al2
       Timeout: 10
       Environment:
         Variables:
-          DENO_DIR: .deno_dir
+          DENO_DIR: /tmp/.deno_dir
 
 Outputs:
   HelloWorldFunction:
