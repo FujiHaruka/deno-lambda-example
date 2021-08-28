@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  SAM Template for deno hello world
+
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: hello-world/
+      Handler: handler.main
+      Runtime: provided.al2
+      Timeout: 10
+      Environment:
+        Variables:
+          DENO_DIR: .deno_dir
+
+Outputs:
+  HelloWorldFunction:
+    Description: "Lambda Function ARN"
+    Value: !GetAtt HelloWorldFunction.Arn
